@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Products</title>
+	<link rel="stylesheet" href="css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="../closure-tools/closure-library/closure/goog/base.js"></script>
+  <script src="../deps/deps.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+      <div id="nav">
+        <span><a href="/demo/">Home</a></span>
+        <span><a href="products.html">Products</a></span>
+        <span><a href="services.html">Services</a></span>
+        <span><a href="locations.html">Locations</a></span>
+        <span><a href="contact.html">Contact</a></span>
+      </div>
+		</div>
+
+		<div id="main" role="main">
+      <p>
+        Here, we have a contacts page.
+      </p>
+      <p>
+        
+      </p>
+		</div>
+
+		<div id="footer">
+      <div id="links">
+        <span><a href="/demo/">Home</a></span>
+        <span><a href="products.html">Products</a></span>
+        <span><a href="services.html">Services</a></span>
+        <span><a href="locations.html">Locations</a></span>
+        <span><a href="contact.html">Contact</a></span>
+      </div>
+		</div>
+	</div>
+  <script src="js/navJax.js"></script>
+  <script>
+    $('a', '#nav').navJax('#main');
+  </script>
+</body>
+</html>

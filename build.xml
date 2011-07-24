@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project name="NavJax" default="usage">
+  
+  <property name="base.dir" location="." />
+  <property name="src.dir" location="${base.dir}/src/" />
+  <property name="closure.lib.dir" location="${base.dir}/closure-tools/closure-library/closure" />
+  <property name="jar.dir" location="${base.dir}/jar" />
+  <property name="build.dir" location="${base.dir}/build" />
+  <property name="deps.dir" location="${base.dir}/deps" />
+  
+  <target name="init">
+    <mkdir dir="${build.dir}"/>
+  </target>
+  
+  <target name="deps" description="calculate and build google closure dependancies" depends="init">
+    <exec executable="python" failonerror="true" logError="true" output="${deps.dir}/deps.js">
+      <arg value="${closure.lib.dir}/bin/calcdeps.py" />
+      <arg line='-p "${closure.lib.dir}"' />
+      <arg line='-p "${src.dir}"' />
+      <arg line="-o deps" />
+    </exec>
+  </target>
+  
+  <target name="usage" description="Usage">
+    <java classname="org.apache.tools.ant.Main">
+      <arg value="-projecthelp" />
+    </java>
+  </target>
+
+</project>
